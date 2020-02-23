@@ -21,8 +21,8 @@
 
 
  ## Reslts Screenshots:
-![Screenshot step by step](/markdown/Screenshot1.jpg)
+![Screenshot step by step](/Markdown/Screenshot1.jpg) 
 
-![Screenshot With Errors Caugth](/markdown/Screenshot2.jpg)
+![Screenshot With Errors Caugth](/Markdown/Screenshot2.jpg)
 
 
