@@ -132,11 +132,12 @@ async function generatePageContent(answers){
 
 	const queryUrl = `https://api.github.com/users/${answers.username}`;
 	//axios.get(queryUrl).then(callbackFunc).catch(catchError);
-	const data = await axios.get(queryUrl); // pas chera onike khodesh nevesht return nadasht ?!
-
 	
-	pageContent = `## Image is :  \n![readme](${data.data.avatar_url})` + "\n\n" +
-					`## Email is : \n${(data.email==null)?"":data.email} \n\n`+
+	let resultData;
+	try {
+		resultData = await axios.get(queryUrl); // pas chera onike khodesh nevesht return nadasht ?!
+		pageContent = `## Image is :  \n![readme](${resultData.data.avatar_url})` + "\n\n" +
+					`## Email is : \n${(resultData.email==null)?"No email address saved in this github profile!":resultData.email} \n\n`+
 					`## Project Title : \n${answers.projecttitle} \n\n` +
 					`## Project Description : \n${answers.projectdescription} \n\n` +
 					`## Table of Contents (Optional): \n${answers.tableofcontents} \n\n` +
@@ -144,8 +145,15 @@ async function generatePageContent(answers){
 					`## [Usage](#usage) \n${answers.usage} \n\n` +
 					`## [Credits](#credits) \n${answers.credit} \n\n` +
 					`## [License](#license) \n${answers.license}`;
+	} catch (errorobj) {
+		if (errorobj.response.status==404){
+			console.log("\n *** GitHub username provided not exist! *** \n")
+			pressAnyKeyFunc();
+		}
+	}
 
 	//return  pageContent;
+	
 	writeFileAsync("Markdown/README.md", pageContent)
 	.then(function() {
 		console.log("\n Successfully wrote to README.md");
