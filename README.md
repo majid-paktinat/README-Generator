@@ -21,11 +21,7 @@
 
 
  ## Results Screenshots:
-<<<<<<< HEAD
 ![Screenshot1](markdown/Screenshot1.jpg)
-=======
-![Screenshot step by step](/Markdown/Screenshot1.jpg) 
->>>>>>> bc4e11963eb1ba8184a2844b87eee919caeba651
 
 ## Results Validations(Errors Caugth):
 ![Screenshot With Errors Caugth](/Markdown/Screenshot2.jpg)
