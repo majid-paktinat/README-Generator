@@ -21,7 +21,7 @@
 
 
  ## Results Screenshots:
-![Screenshot1](markdown/Screenshot1.jpg)
+![Screenshot1](/Markdown/Screenshot1.jpg)
 
 ## Results Validations(Errors Caugth):
 ![Screenshot With Errors Caugth](/Markdown/Screenshot2.jpg)
