@@ -132,7 +132,6 @@ async function generatePageContent(answers){
 
 	const queryUrl = `https://api.github.com/users/${answers.username}`;
 	//axios.get(queryUrl).then(callbackFunc).catch(catchError);
-	
 	let resultData;
 	try {
 		resultData = await axios.get(queryUrl); // pas chera onike khodesh nevesht return nadasht ?!
